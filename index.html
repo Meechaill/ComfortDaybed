@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Комфортная Кушетка</title>
+  <!-- Ваша ссылка на иконку -->
+  <link rel="icon" href="icon.jpg" />
+  <style>
+    /* Добавьте стили по вашему выбору для создания атмосферы комфорта и уюта */
+  </style>
+</head>
+<body>
+  <!-- Главная страница -->
+  <header>
+    <a href="index.html"><img src="icon.jpg" alt="Комфортная Кушетка"></a>
+  </header>
+  <main>
+    <h1>Добро пожаловать на сайт "Комфортная Кушетка"</h1>
+    <div>
+      <input type="text" id="codeInput" placeholder="Введите код входа">
+      <button onclick="checkCode()">Войти</button>
+    </div>
+  </main>
+
+  <!-- Страница с квестами -->
+  <div id="questPage" style="display: none;">
+    <h2>Разгадайте квесты для получения картинки</h2>
+    <div id="quest1" style="display: none;">
+      <h3></h3>
+      <p>Думал в этом мире все так просто?</p>
+      <p>Введи порядок работы цилиндров в ЗИЛ 131 и я тебе дам подарок.</p>
+      <p> подсказка: это пароль от вайфая одного челикса </p>
+      <p> подсказка: без запятых, можно юзать интернет</p>
+      <input type="text" id="answer1" placeholder="Ответ">.
+      <button onclick="checkAnswer(1)">Ответить</button>
+    </div>
+    <div id="quest2" style="display: none;">
+      <h3></h3>
+      <p>Ого! Ты крутой сынок!</p>
+      <p>Ну лдаон, я тебя обманул чуток. Еще вопросик</p>
+      <p>Как зовут маму гоши?</p>
+      <p>подсказка: маленькими буквами</p>
+      <input type="text" id="answer2" placeholder="именем">
+      <button onclick="checkAnswer(2)">именем</button>
+    </div>
+    <!-- Добавьте дополнительные квесты по вашему желанию -->
+    <div id="imageQuest" style="display: none;">
+      <img src="hhh.jpg" alt="">
+      <p>Урааа!!! Ты прошел этот квест!!! Твой подарок это игра в стим которую должен купить эдик :3!!! Вот код активации</p>
+      <a href="https://t.me/HZDUASJENFAHIJSDAFSHDIUXAWERADFJ/3">Код(Смс телеграм, перейди по ссылке)</a>
+      <a href="https://www.youtube.com/watch?v=0Xz1QAywzd0&pp=ygUc0YEg0LTQvdC10Lwg0YDQvtC20LTQtdC90LjRjw%3D%3D">А вот и второй подарок!!!</a>
+    </div>
+  </div>
+
+  <script>
+    function checkCode() {
+      var input = document.getElementById("codeInput").value;
+      if (input === "ZOV") {
+        document.getElementById("questPage").style.display = "block";
+        document.getElementById("quest1").style.display = "block";
+      } else {
+        alert("ТЫ ТУПОЙ?*?*");
+      }
+    }
+
+    function checkAnswer(questNumber) {
+      if (questNumber === 1) {
+        var answer = document.getElementById("answer1").value;
+        if (answer.toLowerCase() === "15426378") {
+          document.getElementById("quest1").style.display = "none";
+          document.getElementById("quest2").style.display = "block";
+        } else {
+          alert("НЕТ!!!!");
+        }
+      } else if (questNumber === 2) {
+        var answer = document.getElementById("answer2").value;
+        if (answer.toLowerCase() === "именем") {
+          document.getElementById("quest2").style.display = "none";
+          document.getElementById("imageQuest").style.display = "block";
+        } else {
+          alert("Ты че? дубинка? Заново, не правильно!!! Партия разачаровагна тобой!!!");
+        }
+      }
+      // Добавьте дополнительные проверки ответов и переходы между квестами, если нужно
+    }
+  </script>
+</body>
+</html>
